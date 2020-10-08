@@ -1,5 +1,7 @@
 # algorithm-study
 
+## 참고
+![ㅇㅇ](http://image.kyobobook.co.kr/images/book/xlarge/178/x9791189909178.jpg)
 
 ## 일정
 * [10/14 2주차](https://github.com/DevooKim/algorithm-study/tree/main/week2)
