@@ -1,6 +1,6 @@
 # algorithm-study
 
-## 참고
+## 참고서적
 ![ㅇㅇ](http://image.kyobobook.co.kr/images/book/xlarge/178/x9791189909178.jpg)
 
 ## 일정
@@ -23,3 +23,10 @@
   + 책14장(트리)
 * [12/9 10주차](https://github.com/DevooKim/algorithm-study/tree/main/week10)
   + 책15장(힙)
+  
+## 참고 사이트
+[BOJ](https://www.acmicpc.net/)
+
+[programmers](https://programmers.co.kr/)
+
+[leetcode](https://leetcode.com/problemset/all/)
