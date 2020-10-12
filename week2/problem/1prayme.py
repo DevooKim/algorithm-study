@@ -1,6 +1,3 @@
-from typing import List
-
-
 # 3진법 뒤집기
 class Solution:
     def re(self, n: int) -> int:
