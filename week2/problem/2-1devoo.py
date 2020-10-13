@@ -1,3 +1,14 @@
+'''
+1. arr를 1차배열(flat)로 만든다.
+2. tmp에 flat[i : i+(al//2)]를 더한다. (좌측)
+    i+=al하고 i < fl까지 반복
+3. i = al // 2로 초기화하고 과정2 반복 (우측)
+
+규칙 : [n : n+(al//2)]
+
+풀이방법
+재귀, 분할정복(?)
+'''
 def solution(arr):
     answer = []
     flat = sum(arr, [])
