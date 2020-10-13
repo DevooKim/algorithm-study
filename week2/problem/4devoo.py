@@ -33,4 +33,5 @@ def solution(s):
             
     return answer
 
-print(solution("baby"))
+#print(solution("baby"))
+print(solution("abcaa"))
