@@ -11,28 +11,20 @@ from typing import List
 
 class Solution:
     def productExceptSelf(self, nums: List[int]) -> List[int]:
-        print(f"nums: {nums}")
-        result = []
-        for i in range(len(nums)):
-            mul = 0
-            left, right = 0, len(nums) - 1
-            while left < right:
-                if left == i:
-                    left += 1
-                    continue
-                elif right == i:
-                    right -= 1
-                    continue
-                mul += nums[left] * nums[right]
-                print(f'i: {i} left: {nums[left]} right: {nums[right]} mul: {mul}')
-                if left + 1 != right:
-                    left += 1
-                    right -= 1
+        out = []
 
+        p = 1
+        for i in range(0, len(nums)):
+            out.append(p)
+            p = p * nums[i]
 
-            result.append(mul)
-        print(result)
-        return result
+        p = 1
+        for i in range(len(nums) - 1, 0 - 1, - 1):
+            out[i] = out[i] * p
+            p = p * nums[i]
+
+        print(out)
+        return out
 
 
 
