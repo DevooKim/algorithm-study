@@ -6,7 +6,7 @@ def solution(s):
     for i in range(len(s) - 1):
         for j in range(i, len(s)):         
             sliced = s[i:j+1]
-            _max, l, r= 0, 0, len(sliced) - 1
+            _max = 0
             '''
             for m in range(len(sliced) - 1):
                 for n in range(m, len(sliced)):
