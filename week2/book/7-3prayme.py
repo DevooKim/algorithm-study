@@ -22,6 +22,21 @@ class Solution:
         print(result)
         return result
 
+    def arrayPairSum(self, nums: List[int]) -> int:
+        if len(nums) == 2:
+            return nums[0]
+
+        result = 0
+        nums.sort()
+        for i in range(0, len(nums), 2):
+            result += nums[i]
+
+        print(result)
+        return result
+
+    def arrayPairSum(self, nums: List[int]) -> int:
+        return sum(sorted(nums)[::2])
+
 
 
 Solution().arrayPairSum([1,4,3,2])
