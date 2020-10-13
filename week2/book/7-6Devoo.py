@@ -10,7 +10,7 @@ from typing import *
 
 class Solution:
     def maxProfit(self, prices: List[int]) -> int:
-        profit = 0
+        profit = -sys.maxsize
         lowest = sys.maxsize
 
         for i in prices:
