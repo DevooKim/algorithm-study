@@ -1,30 +1,34 @@
 def solution(arr):
     answer = []
-    l = len(arr)
-    arr = sum(arr, [])
+    flat = sum(arr, [])
+    al, fl = len(arr), len(flat)
 
-    n = 0
-    tmp3 = []
-    while l > 2:
-        tmp2 = []
-        for i in range(n, len(arr), l*2):
-            tmp = []
+    if flat.count(0) == len(flat):
+        return [len(flat), 0]
+    elif flat.count(1) == len(flat):
+        return [0, len(flat)]
 
-            #일정 수 만큼 반복
-            tmp += arr[i : i+(l//2)]
-            tmp += arr[i+l : i+l+(l//2)]
-
+    tmp = []
+    tmp2 = []
+    while al > 1:
+        i = 0
+        while i < fl:
+            tmp += flat[i : i+(al//2)]
             tmp2.append(tmp)
+            tmp = []
+            i += al
         
+        tmp = []
+        i = al // 2
+        while i < (fl - (al//2)):
+            tmp += flat[i : i+(al//2)]
+            tmp2.append(tmp)
+            tmp = []
+            i += al
         print(tmp2)
-        n += (l//2)
-        print(n)
-        if n == l:
-            print('---')
-            n = 0
-            l //= 2
+        break        
 
     return answer
 
-solution([[1,1,0,0],[1,0,0,0],[1,0,0,1],[1,1,1,1]])
-#solution([[1,1,1,1,1,1,1,1],[0,1,1,1,1,1,1,1],[0,0,0,0,1,1,1,1],[0,1,0,0,1,1,1,1],[0,0,0,0,0,0,1,1],[0,0,0,0,0,0,0,1],[0,0,0,0,1,0,0,1],[0,0,0,0,1,1,1,1]])
+print(solution([[1,1,0,0],[1,0,0,0],[1,0,0,1],[1,1,1,1]]) == [4,9])
+#print(solution([[1,1,1,1,1,1,1,1],[0,1,1,1,1,1,1,1],[0,0,0,0,1,1,1,1],[0,1,0,0,1,1,1,1],[0,0,0,0,0,0,1,1],[0,0,0,0,0,0,0,1],[0,0,0,0,1,0,0,1],[0,0,0,0,1,1,1,1]]) == [10,15])
