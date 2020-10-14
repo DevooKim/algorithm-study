@@ -28,13 +28,16 @@ def solution(s):
                 for n in range(len(sliced)-1, m, -1):
                     if sliced[n] != sliced[m]:
                         _max = _max < n-m and n-m or _max
+                        _max = max(n-m, _max)
                         break
             answer += _max
             
     return answer
 
-#print(solution("baby"))
+print(solution("baby"))
 print(solution("abcaa"))
+print(solution("aabaaa"))
+print(solution("aaaba"))
 
 
 '''
