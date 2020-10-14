@@ -10,22 +10,22 @@ def solution(s):
             l = i
             sliced += s[j]
             print(sliced)
-            if s[i] == s[j] and r == 0:
+            if s[i] == s[j] and r == 0: #앞쪽 같은 문자열 패스 (aa, aaa, aaa, ...)
                 continue
 
             if s[i] != s[j]:
                 r = j #서로 다른 글자 중 최대 인덱스
             elif s[i] == s[j]:
                 while s[l] == s[j] and l < j:
-                    l += 1
-            #    s[t]와 s[j]가 다를 때 까지 t+=1 후 비교
-            diff = max(r - i, j - l)
+                    l += 1  #서로 다른 글자 중 최소 인덱스
+            diff = max(j - l, r - i)
             print(f'i:{i}, l:{l}, r:{r}, j:{j}')
             print(f'diff:{diff}')
-            #answer += (r - l)    
             answer += diff    
+
     print(f'answer:{answer}')
     return answer
+
 #print(solution("baby") == 9)
 #print(solution("abcaa") == 17)
 #print(solution("aabaaa") == 22)
