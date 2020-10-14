@@ -14,10 +14,10 @@ def solution(s):
                 continue
 
             if s[i] != s[j]:
-                r = j #서로 다른 글자 중 최대 인덱스
+                r = j #양 끝이 다른 경우의 오른쪽 인덱스
             elif s[i] == s[j]:
                 while s[l] == s[j] and l < j:
-                    l += 1  #서로 다른 글자 중 최소 인덱스
+                    l += 1  #양 끝이 같은 경우의 왼쪽기준 다른 문자인 인덱스
             diff = max(j - l, r - i)
             print(f'i:{i}, l:{l}, r:{r}, j:{j}')
             print(f'diff:{diff}')
