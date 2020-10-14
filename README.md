@@ -9,6 +9,7 @@
   + 프로그래머스 월간코드챌린지 10월
 * [10/21 3주차](https://github.com/DevooKim/algorithm-study/tree/main/week3)
   + 책8장(연결 리스트)
+  + [BOJ](https://www.acmicpc.net/workbook/view/1066)
 * [10/28 4주차](https://github.com/DevooKim/algorithm-study/tree/main/week4)
   + 책9장(스택, 큐)
 * [11/4 5주차](https://github.com/DevooKim/algorithm-study/tree/main/week5)
