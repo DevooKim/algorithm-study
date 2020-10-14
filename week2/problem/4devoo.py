@@ -27,7 +27,7 @@ def solution(s):
             for m in range(len(sliced) - 1):
                 for n in range(len(sliced)-1, m, -1):
                     if sliced[n] != sliced[m]:
-                        _max = _max < n-m and n-m or _max
+                        #_max = _max < n-m and n-m or _max
                         _max = max(n-m, _max)
                         break
             answer += _max
