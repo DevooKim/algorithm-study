@@ -13,7 +13,7 @@ class Solution:
         nums.sort()
         result = []
         for i in range(len(nums) - 2):
-            if i > 0 and nums[i] == nums[i - 1]:
+            if i > 0 and nums[i] == nums[i - 1]: #중복 제거
                 continue
             left, right = i + 1, len(nums) - 1
             while left < right:
@@ -22,7 +22,7 @@ class Solution:
                     left += 1
                 elif calc == 0:
                     result.append([nums[i], nums[left], nums[right]])
-                    while left < right and nums[left] == nums[left+1]:
+                    while left < right and nums[left] == nums[left+1]:  #좌우에 같은 수가 있는 경우 건너 뛰기 예시: [-2,*1,*1,*1,0,2,3,4,5,1]
                         left += 1
                     while left < right and nums[right] == nums[right - 1]:
                         right -= 1
