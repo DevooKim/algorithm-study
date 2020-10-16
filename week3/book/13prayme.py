@@ -43,12 +43,13 @@ class Solution:
 
         while fast and fast.next:
             fast = fast.next.next
-            rev, rev.next, slow = slow, rev, slow.next # runner를 활용해서 rev에 2개씩 넣기, slow 전진시키기
+            rev, rev.next, slow = slow, rev, slow.next  # runner를 활용해서 rev에 2개씩 넣기, slow 전진시키기
         if fast:
             slow = slow.next
 
         while rev and rev.val == slow.val:
             slow, rev = slow.next, rev.next
         return not rev
+
 
 print(Solution().isPalindrome(ListNode(val=1, next=ListNode(val=2, next=None))))
