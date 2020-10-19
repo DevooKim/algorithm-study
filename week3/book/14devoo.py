@@ -14,9 +14,6 @@ class ListNode:
         self.next = next
 class Solution:
     def mergeTwoLists(self, l1: ListNode, l2: ListNode) -> ListNode:
-        def append(result:ListNode, val) -> ListNode:
-            result.next = ListNode(val)
-            return result
         result = None
         while l1 and l2:
             if l1.val < l2.val:
@@ -24,4 +21,14 @@ class Solution:
             else:
                 result, result.next, l2 = ListNode(l2.val), result, l2.next
                 
-        print(result)
+        if l1 is None:
+            while l2:
+                result, result.next, l2 = ListNode(l2.val), result, l2.next
+        elif l2 is None:
+            while l1:
+                result, result.next, l1 = ListNode(l1.val), result, l1.next
+
+        rev = None
+        while result:
+            rev, rev.next, result = result, rev, result.next
+        return rev
