@@ -17,10 +17,17 @@ class ListNode:
 class Solution:
     def isPalindrome(self, head: ListNode) -> bool:
         tmp = []
+        #tmp: Deque = collections.deque()
         
         while head:
             tmp.append(head.val)
             head = head.next
+
+        #while len(tmp) > 1:
+        #    if tmp.popleft() != tmp.pop():
+        #        return False
+        #return True
+
         return tmp == tmp[::-1]
 
 a = Solution()
