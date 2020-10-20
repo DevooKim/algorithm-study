@@ -16,21 +16,17 @@ class ListNode:
 
 class Solution:
     def reverseBetween(self, head: ListNode, m: int, n: int) -> ListNode:
-        size = 1
-        node = head
-        rev, front = None, None, None
-        tmp = ListNode(head.val)
-        while node and node.next:
-            if size == m - 1:
-                front = tmp
+        if not head or m == n:
+            return head
 
-            if size >= m and size <= n:
-                rev = ListNode(node.val, rev)
-            tmp.next = ListNode(node.val, tmp)
+        root = start = ListNode(None)
+        root.next = head
 
-            node = node.next
-            size += 1
-            
-            if size == n+1:
-                break
+        for _ in range(m - 1):
+            start = start.next
+        end = start.next
 
+        for _ in range(n - m):
+            tmp, start.next, end.next = start.next, end.next, end.next.next
+            start.next.next = tmp
+        return root.next
