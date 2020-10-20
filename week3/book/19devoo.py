@@ -18,11 +18,19 @@ class Solution:
     def reverseBetween(self, head: ListNode, m: int, n: int) -> ListNode:
         size = 1
         node = head
-        rev = None
-        while node:
+        rev, front = None, None, None
+        tmp = ListNode(head.val)
+        while node and node.next:
+            if size == m - 1:
+                front = tmp
+
             if size >= m and size <= n:
                 rev = ListNode(node.val, rev)
-                print(rev)
+            tmp.next = ListNode(node.val, tmp)
+
             node = node.next
             size += 1
+            
+            if size == n+1:
+                break
 
