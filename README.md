@@ -12,6 +12,7 @@
   + [BOJ](https://www.acmicpc.net/workbook/view/1066)
 * [10/28 4주차](https://github.com/DevooKim/algorithm-study/tree/main/week4)
   + 책9장(스택, 큐)
+  + [programmers](https://programmers.co.kr/learn/courses/30/parts/12081)
 * [11/4 5주차](https://github.com/DevooKim/algorithm-study/tree/main/week5)
   + 책10장(데크, 우선순위 큐)
 * [11/11 6주차](https://github.com/DevooKim/algorithm-study/tree/main/week6)
