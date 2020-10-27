@@ -23,6 +23,8 @@ class Solution:
 
             if small < 0 or medium < 0 or large < 0:
                 return False
+            elif small + medium + large > 1:
+                return False
         return True
 
 
