@@ -16,6 +16,24 @@ def solution(priorities, location):
                 return answer
     return answer
 
-print(solution([2,1,3,2], 2))
-print(solution([1,1,9,1,1,1], 0))
+def solution2(priorities, location):
+    _hash = [(priorities[x],x) for x in range(len(priorities))]
+    q = []
+
+    while _hash:
+        max_n = max(_hash)
+        tmp = _hash.pop(0)
+        if tmp[0] < max_n[0]:   #우선순위 비교
+            _hash.append(tmp)   #뒤로 다시 넣어 줌
+        else:
+            q.append(tmp)       #스택에 추가(순서 파악)
+
+    for i in range(len(q)):
+        if q[i][1] == location: #순서 찾기
+            return i+1
+
+#print(solution([2,1,3,2], 2))
+#print(solution2([2,1,3,2], 2))
+#print(solution([1,1,9,1,1,1], 0))
+print(solution2([1,1,9,1,1,1], 0))
 #print(solution([1, 1, 1, 1], 3))
