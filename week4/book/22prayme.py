@@ -22,23 +22,37 @@ class Solution:
     def twoPointer(self, T: List[int]) -> List[int]:
         result = [0] * len(T)
 
-        front, back = 0, 1
-        while front < len(T) - 1 and back <= len(T) - 1:
+        front, back, backback = 0, 1, 2
+        while front <= len(T) - 3 and back <= len(T) - 2 and backback <= len(T) - 1:
+            print(f'front: {T[front]}, back: {T[back]} back - front: {back - front}')
+            print(f'front: {front}, back: {back}, backback: {backback}')
+
 
             if T[front] < T[back]:
-                # print(f'front: {T[front]}, back: {T[back]} back - front: {back - front}')
                 result[front] = back - front
                 front += 1
                 back = front + 1
+                backback = back + 1
                 continue
-
-            if front != len(T) - 2 and back == len(T) - 1:
+            elif T[front] < T[backback]:
+                result[front] = backback - front
                 front += 1
                 back = front + 1
+                backback = back + 1
                 continue
 
-            back += 1
+            if front != len(T) - 3 and back == len(T) - 2 and backback == len(T) - 1:
+                front += 1
+                back = front + 1
+                backback = back + 1
+                continue
 
+
+            back += 2
+            backback += 2
+
+
+        print(result)
         return result
 
 
