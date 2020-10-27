@@ -58,8 +58,8 @@ class Solution:
         #         b = ListNode(val % 10, tail)
         #         return get(val // 10, b)
         #     return ListNode(val, tail)
-
-
+        #
+        #
         # return get(result).toString()
 
         list1, list2 = [], []
@@ -97,6 +97,7 @@ class Solution:
             b = ListNode(i, a)
             a = b
 
+        print(a.toString())
         return a
 
 
