@@ -25,7 +25,7 @@ class MyStack:
         
 
     def empty(self) -> bool:
-        self.stack = []
+        return len(self.stack) == 0
         
 
 
