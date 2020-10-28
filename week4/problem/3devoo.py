@@ -1,5 +1,6 @@
 import collections
 
+#내 풀이(미완성)
 def solution(bridge_length, weight, truck_weights):
     answer = 0
     #다리 위의 트럭 = 스택
@@ -26,5 +27,25 @@ def solution(bridge_length, weight, truck_weights):
         #print(stack)
     return answer
 
-print(solution(2, 10, [7,4,5,6]))
+def solution2(bridge_length, weight, truck_weights):
+    time = 0
+    q = [0] * bridge_length
+    sum_queue = 0
+
+    while q:
+        print(q)
+        time += 1
+        sum_queue -= q.pop(0)
+
+        if truck_weights:
+            if truck_weights[0] + sum_queue <= weight:
+                sum_queue += truck_weights[0]
+                q.append(truck_weights.pop(0))
+            else:
+                q.append(0)
+    return time
+
+#print(solution(2, 10, [7,4,5,6]))
+#print(solution2(2, 10, [7,4,5,6]))
 #print(solution(100, 100, [10,10,10,10,10,10,10,10,10,10]))
+print(solution2(4, 100, [10,10,10,10,10,10,10,10,10,10]))
