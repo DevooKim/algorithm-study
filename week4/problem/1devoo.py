@@ -1,6 +1,7 @@
 import time
 from collections import deque
 
+#이전풀이
 def solution(prices):
     start = time.time()
     answer = []
@@ -19,6 +20,7 @@ def solution(prices):
     print(f'solution: {time.time() - start}')
     return answer
 
+#최근풀이
 def solution2(prices):
     start = time.time()
     answer = [0] * len(prices)

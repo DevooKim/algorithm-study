@@ -1,3 +1,4 @@
+#최근풀이
 def solution(priorities, location):
     answer = 0
     index_list = [i for i in range(len(priorities))]
@@ -16,6 +17,7 @@ def solution(priorities, location):
                 return answer
     return answer
 
+#이전풀이
 def solution2(priorities, location):
     _hash = [(priorities[x],x) for x in range(len(priorities))]
     q = []
