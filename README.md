@@ -15,6 +15,7 @@
   + [programmers](https://programmers.co.kr/learn/courses/30/parts/12081)
 * [11/4 5주차](https://github.com/DevooKim/algorithm-study/tree/main/week5)
   + 책10장(데크, 우선순위 큐)
+  + [프로그래머스 겨울방학 인턴 코테](https://programmers.co.kr/competitions/449/2020-winter-coding?utm_source=programmers&utm_medium=learn_competition449&utm_campaign=competition449)
 * [11/11 6주차](https://github.com/DevooKim/algorithm-study/tree/main/week6)
   + 책11장(해시 테이블)
 * [11/18 7주차](https://github.com/DevooKim/algorithm-study/tree/main/week7)
