@@ -44,5 +44,5 @@ class Solution:
         return len(stack) == 0
 
 for i in ["()", "()[]{}", "(]", "([)]", "{[]}"]:
-    # print(Solution().isValid(i))
-    print(Solution().book(i))
+    print(Solution().isValid(i))
+    # print(Solution().book(i))
