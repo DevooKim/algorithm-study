@@ -8,6 +8,7 @@ def solution(progresses, speeds):
 
     #ceil을 안쓰고 이런식으로도 가능하다....
     #ceil을 안쓰는 것이 아주 근소하게 더 빠르다. (아래 첫번째 케이스일 경우 평균 1ms)
+    #다시 해보니 실행할 때 마다 결과의 차이가 커서 비교불가
     progresses = list(map(lambda x: x - 100, progresses))
     progresses = [-(p // s) for p, s in zip(progresses, speeds)]
     print(f'남은 작업일 수: {progresses}')
