@@ -16,6 +16,7 @@ def solution(progresses, speeds):
     #빗물 트래킹, 주식 방법
     #자신 이후에 낮은 것들을 같이 빼버린다.
     for cur in progresses:
+        #cur보다 작은 것들을 cur보다 큰 수가 나올 때 까지 stack에 쌓는다.
         while stack and cur > stack[0]:
             answer.append(len(stack))
             stack = []
