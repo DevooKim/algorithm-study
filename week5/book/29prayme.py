@@ -10,5 +10,8 @@ class Solution:
         print(result)
         return result
 
+    def book(selfself, J: str, S: str) -> int:
+       return sum(s in J for s in S)
+
 Solution().numJewelsInStones("aA", "aAAbbbb")
 Solution().numJewelsInStones("z", "ZZ")
