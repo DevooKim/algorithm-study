@@ -4,13 +4,9 @@ from typing import List
 class Solution:
     def topKFrequent(self, nums: List[int], k: int) -> List[int]:
         cnt = collections.Counter(nums)
+        print(cnt.most_common(k))
+        return [answer[0] for answer in cnt.most_common(k)]
 
-        answer = []
-        for num, freq in cnt.most_common():
-            if freq >= k:
-                answer.append(num)
-
-        return answer
 
 
 print(Solution().topKFrequent([1,1,1,2,2,3], 2))
