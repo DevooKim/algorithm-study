@@ -2,25 +2,39 @@ import collections
 
 class Solution:
     def lengthOfLongestSubstring(self, s: str) -> int:
-        # 중복되는 곳 index를 탐색 그 사이의 차이가 가장 큰 수를 리턴
-        hash = collections.defaultdict(int)
-        result = []
-        while s:
-            hash[s[0]] += 1
+        # 윈도우 형식으로..
 
-            if len(s) == 1 and hash[s[0]] == 1:
-                result.append(len(hash))
-                return max(result)
+        cnt = collections.Counter(s)
+        if len(cnt) == 1:
+            return 1
 
-            if hash[s[0]] != 1:
-                result.append(len(hash))
-                hash = collections.defaultdict(int)
+        if len(s) == 0:
+            return 0
+        elif len(s) == 1:
+            return 1
+        elif len(s) == 2:
+            if s[0] == s[1]:
+                return 1
+            return 2
+
+        start, window = 0, 2
+        while start + window <= len(s):
+            cnt = collections.Counter(s[start:start + window])
+
+            # print(s[start:start + window])
+            # print(cnt.most_common(1)[0][1])
+            if cnt.most_common(1)[0][1] == 1:
+                start, window = 0, window + 1
+                continue
+
+            start += 1
+
+        return window - 1
 
 
-            s = s[1:]
 
-        return max(result)
 
-Solution().lengthOfLongestSubstring("abcabcbb") # return 3
-Solution().lengthOfLongestSubstring("bbbbb") # return 1
-Solution().lengthOfLongestSubstring("pwwkew") # return 3
+print(Solution().lengthOfLongestSubstring("abcabcbb")) # 3
+print(Solution().lengthOfLongestSubstring("bbbbb")) # 1
+print(Solution().lengthOfLongestSubstring("pwwkew"))  # 3
+
