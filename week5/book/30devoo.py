@@ -28,6 +28,7 @@ class Solution:
         max_len = start = 0
 
         for index, char in enumerate(s):
+            print(used, max_len)
             if char in used and start <= used[char]:
                 start = used[char] + 1
             else:
@@ -38,4 +39,4 @@ class Solution:
 
 a = Solution()
 print(a.lengthOfLongestSubstring("abcabcbb"))
-print(a.lengthOfLongestSubstring("bbbbb"))
+print(a.twoPointer("abcabcbb"))
