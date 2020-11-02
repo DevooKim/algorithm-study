@@ -17,12 +17,16 @@ class Solution:
                 hash[n] = 1
             else:
                 hash[n] += 1
-            if hash[n] == k:
-                result.append(n)
+            # if hash[n] == k:
+            #     result.append(n)
+        hash = sorted(hash.items(), key=lambda x: x[1])
+        for _ in range(k):
+            result.append(hash.pop()[0])
         return result
 
     def counter(self, nums: List[int], k: int) -> List[int]:
         freq = collections.Counter(nums)
+        print(freq)
         freq_heap = []
 
         for f in freq:
@@ -32,7 +36,7 @@ class Solution:
             topk.append(heapq.heappop(freq_heap)[1])
         return topk
 a = Solution()
-# print(a.topKFrequent([1,1,1,2,2,3], 2))
+#print(a.topKFrequent([1,1,1,2,2,3], 2))
 # print(a.topKFrequent([1,2], 2))
 #print(a.topKFrequent([1,2,2,3], 2))
 print(a.counter([1,1,1,2,2,3], 3))
