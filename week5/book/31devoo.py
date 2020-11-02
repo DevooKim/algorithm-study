@@ -32,7 +32,9 @@ class Solution:
             topk.append(heapq.heappop(freq_heap)[1])
         return topk
 a = Solution()
-print(a.topKFrequent([1,1,1,2,2,3], 2))
-print(a.topKFrequent([1,2], 2))
-print(a.counter([1,1,1,2,2,3], 2))
-print(a.counter([1,2], 2))
+# print(a.topKFrequent([1,1,1,2,2,3], 2))
+# print(a.topKFrequent([1,2], 2))
+print(a.topKFrequent([1,2,2,3], 2))
+# print(a.counter([1,1,1,2,2,3], 2))
+# print(a.counter([1,2], 2))
+print(a.counter([1,2,2], 2))
