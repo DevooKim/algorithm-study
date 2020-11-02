@@ -17,22 +17,38 @@ class Solution:
         return result
 
     def hashTable(self, J: str, S: str) -> int:
-        h = {}
+        freq = {}
         count = 0
 
-        for s in S:
-            if s not in h:
-                h[s] = 1
+        for char in S:
+            if char not in freq:
+                freq[char] = 1
             else:
-                h[s] += 1
+                freq[char] += 1
 
-        for j in J:
-            if j in h:
-                count += h[j]
+        for char in J:
+            if char in freq:
+                count += freq[char]
         return count
         
+    def defaultDict(self, J: str, S: str) -> int:
+        freq = collections.defaultdict(int)
+        count = 0
+
+        for char in S:
+            freq[char] += 1
+
+        for char in J:
+            count += freq[char]
+        
+        return count
+
+    def wow(self, J: str, S: str) -> int:
+        return sum(s in J for s in S)
 
 
+            
 a = Solution()
 print(a.numJewelsInStones("aA", "aAABBBB"))
 print(a.hashTable("aA", "aAABBBB"))
+print(a.defaultDict("aA", "aAABBBB"))
