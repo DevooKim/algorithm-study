@@ -28,7 +28,7 @@ class Solution:
         max_len = start = 0
 
         for index, char in enumerate(s):
-            print(used, max_len)
+            print(used, max_len, start)
             if char in used and start <= used[char]:
                 start = used[char] + 1
             else:
