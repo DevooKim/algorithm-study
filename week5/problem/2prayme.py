@@ -3,7 +3,7 @@ def solution(encrypted_text, key, rotation):
 
     if len(encrypted_text) == 1:
         weight = table.index(key) + 1
-        return table[(table.index(encrypted_text[i]) - weight)]
+        return table[(table.index(encrypted_text[0]) - weight)]
     elif len(encrypted_text) == '':
         return ''
 
@@ -23,4 +23,5 @@ def solution(encrypted_text, key, rotation):
     return answer
 
 # solution('hellopython','abcdefghijk',3)
-solution('qyyigoptvfb','abcdefghijk',-3)
+print(solution('qyyigoptvfb','abcdefghijk',-3))
+print(solution("bac", "dbc", 3))
