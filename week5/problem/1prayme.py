@@ -11,6 +11,7 @@ def solution(n, delivery):
             shipped[ship[0] - 1], shipped[ship[1] - 1] = 'O', 'O'
             delivery.remove(ship)
 
+
     clone = delivery
     for ship in clone:
         left, right = ship[0] - 1, ship[1] - 1
