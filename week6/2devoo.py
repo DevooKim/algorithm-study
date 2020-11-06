@@ -6,11 +6,12 @@ def solution(s):
         for i in s:
             if i == "1":
                 no_zero += "1"
-        r_zero += len(s) - len(no_zero)
 
+        r_zero += len(s) - len(no_zero)
         s = format(len(no_zero), 'b')
         no_zero = ""
         count += 1
+        
     answer = [count, r_zero]
     
     return answer
