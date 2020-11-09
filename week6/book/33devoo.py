@@ -21,7 +21,7 @@ class Solution:
             8: ['t', 'u', 'v'],
             9: ['w', 'x', 'y', 'z']
             }
-            if len(s) == len(digits):
+            if len(i) == 0:
                 answer.append(s)
                 return
             for k in phone[int(i[0])]:
