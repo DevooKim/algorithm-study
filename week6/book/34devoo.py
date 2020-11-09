@@ -27,5 +27,27 @@ class Solution:
 
         return answer
 
+    def book(self, nums: List[int]) -> List[List[int]]:
+        def dfs(elements):
+            if len(elements) == 0:
+                result.append(prev_elements[:])
+
+            for e in elements:
+                next_elements = elements[:]
+                next_elements.remove(e)
+
+                prev_elements.append(e)
+                dfs(next_elements)
+                prev_elements.pop()
+
+        result = []
+        prev_elements = []
+
+        dfs(nums)
+        return result
+
+    def book2(self, nums: List[int]) -> List[List[int]]:
+        return list(itertools.permutations(nums))
+
 a = Solution()
-print(a.permute([1,2,3]))
+print(a.book([1,2,3]))
