@@ -13,10 +13,10 @@ class Solution:
         arr = [i for i in range(1, n+1)]
 
         def dfs(a):
-            if len(a) == k and a not in answer:
+            if len(a) == k:
                 answer.append(a)
                 return
-                
+
             for i in a:
                 next = a[:]
                 next.remove(i)
@@ -29,6 +29,22 @@ class Solution:
         prev = []
         dfs(arr)
         return answer
+    def book(self, n: int, k: int) -> List[List[int]]:
+        result = []
+        
+        def dfs(elements, start: int, k: int):
+            if k == 0:
+                result.append(elements[:])
+            
+            for i in range(start, n + 1):
+                elements.append(i)
+                dfs(elements, i + 1, k - 1)
+                elements.pop()
+
+        dfs([], 1, k)
+        return result
+    
 
 a = Solution()
+print(a.book(4,2))
 print(a.combine(4,2))
