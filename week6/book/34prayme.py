@@ -35,8 +35,36 @@ class Solution:
 
         return result
 
+    def book(self, nums: List[int]) -> List[List[int]]:
+        # 레벨이 증가할수록 자식 노드의 개수는 점점 작아진다.
+        # 최상위는 자식노드 3개 -> 2개 -> 1개
+        # 팩토리얼과 같다. 리스트의 길이가 5개였으면 5 -> 4 -> 3 -> 2 -> 1
 
-print(Solution().permute([1, 2, 3]))
+        result = []
+        prev_elements = []
+
+        def dfs(elements):
+            if len(elements) == 0:
+                result.append(prev_elements[:])
+
+            for e in elements:
+                next_elements = elements[:]
+                next_elements.remove(e)
+                print(f'NEXT_ELEM: {next_elements}')
+
+                prev_elements.append(e)
+                print(f'PREV_ELEM: {prev_elements}')
+                dfs(next_elements)
+                prev_elements.pop()
+
+        dfs(nums)
+        return result
+
+    def book2(self, nums: List[int]) -> List[List[int]]:
+        return list(itertools.permutations(nums))
+
+# print(Solution().permute([1, 2, 3]))
+print(Solution().book([1, 2, 3]))
 
 # [[5, 4, 6, 2], [5, 6, 2, 4], [5, 2, 4, 6], [4, 6, 2, 5], [4, 2, 5, 6], [4, 5, 6, 2], [6, 2, 5, 4], [6, 5, 4, 2],
 #  [6, 4, 2, 5], [2, 5, 4, 6], [2, 4, 6, 5], [2, 6, 5, 4], [5, 4, 6, 2], [5, 6, 2, 4], [5, 2, 4, 6], [4, 6, 2, 5],
