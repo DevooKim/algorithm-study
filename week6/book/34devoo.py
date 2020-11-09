@@ -8,6 +8,7 @@ import math
 import bisect
 from typing import *
 
+#못 풀음
 class Solution:
     def permute(self, nums: List[int]) -> List[List[int]]:
 
