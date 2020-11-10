@@ -8,6 +8,7 @@ import math
 import bisect
 from typing import *
 
+#시간초과
 class Solution:
     def combine(self, n: int, k: int) -> List[List[int]]:
         arr = [i for i in range(1, n+1)]
@@ -29,6 +30,7 @@ class Solution:
         prev = []
         dfs(arr)
         return answer
+
     def book(self, n: int, k: int) -> List[List[int]]:
         result = []
         
@@ -47,4 +49,4 @@ class Solution:
 
 a = Solution()
 print(a.book(4,2))
-print(a.combine(4,2))
+#print(a.combine(4,2))
