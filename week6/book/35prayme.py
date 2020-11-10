@@ -1,39 +1,42 @@
-import collections
-import heapq
-import functools
 import itertools
-import re
-import sys
-import math
-import bisect
 from typing import List
 
+
 class Solution:
-    def combinationSum(self, candidates: List[int], target: int) -> List[List[int]]:
-        # 1.candidates가 큰가?
-        # 2.1 %가 0인가? yes -> // 후 갯수 리턴
-        # 2.2 %가 0인가? no -> // 갯수 추가 후
-        # 2.2 % 후 남은 숫자를 다시 1. 실행
-        # 중복은 제거!
-        # 가장 큰 수부터 하면 중복 없을듯
+    def combine(self, n: int, k: int) -> List[List[int]]:
+        def dfs(n):
+            if k > n:
+                return
+
+            for i in range(1, n):
+                result.append([i, n])
+
+            dfs(n - 1)
 
         result = []
+        dfs(n)
 
-        def func(candidate, num):
-
-            clone = candidate[::-1]
-            for i in candidate[::-1]:
-                element = [i] * (target // i)
-                clone.remove(i)
-                asd(clone)
-
-
-
-
+        print(f'RESULT: {result}')
         return result
 
+    def book(self, n: int, k: int) -> List[List[int]]:
+        result = []
+
+        def dfs(elements, start: int, k: int):
+            if k == 0:
+                result.append(elements[:])
+
+            for i in range(start, n + 1):
+                elements.append(i)
+                dfs(elements, i + 1, k - 1)
+                elements.pop()
+
+        dfs([], 1, k)
+        return result
+
+    def book2(self, n: int, k: int) -> List[List[int]]:
+        return list(itertools.combinations(range(1, n + 1), k))
 
 
-
-print(Solution().combinationSum([2,3,6,7], 7))
-print(Solution().combinationSum([2,3,5], 8))
+print(Solution().combine(4, 2))
+print(Solution().combine(1, 1))
