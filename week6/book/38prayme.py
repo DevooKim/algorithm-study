@@ -76,7 +76,7 @@ class Solution:
 
     def book_iter(self, tickets: List[List[str]]) -> List[str]:
         graph = collections.defaultdict(list)
-        for a, b in sorted(tickets)
+        for a, b in sorted(tickets):
             graph[a].append(b)
 
         route, stack = [], ['JFK']
