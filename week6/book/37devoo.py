@@ -8,6 +8,7 @@ import math
 import bisect
 from typing import *
 
+#풀었음
 class Solution:
     def subsets(self, nums: List[int]) -> List[List[int]]:
         result = []
