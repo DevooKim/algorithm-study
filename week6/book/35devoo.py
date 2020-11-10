@@ -45,6 +45,9 @@ class Solution:
 
         dfs([], 1, k)
         return result
+
+    def book2(self, n: int, k: int) -> List[List[int]]:
+        return list(itertools.combinations(range(1, n+1), k))
     
 
 a = Solution()
