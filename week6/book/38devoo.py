@@ -76,8 +76,8 @@ class Solution:
 
 a = Solution()
 #print(a.findItinerary([["MUC", "LHR"], ["JFK", "MUC"], ["SFO", "SJC"], ["LHR", "SFO"]]))
-print(a.book([["MUC", "LHR"], ["JFK", "MUC"], ["SFO", "SJC"], ["LHR", "SFO"]]))
+#print(a.book([["MUC", "LHR"], ["JFK", "MUC"], ["SFO", "SJC"], ["LHR", "SFO"]]))
 # print(a.findItinerary([["JFK","SFO"],["JFK","ATL"],["SFO","ATL"],["ATL","JFK"],["ATL","SFO"]]))
 # print(a.findItinerary([["JFK","SFO"]]))
-# print(a.findItinerary([["JFK","KUL"],["JFK","NRT"],["NRT","JFK"]]))
+#print(a.findItinerary([["JFK","KUL"],["JFK","NRT"],["NRT","JFK"]]))
 # print(a.book([["JFK","KUL"],["JFK","NRT"],["NRT","JFK"]]))
