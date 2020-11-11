@@ -14,6 +14,7 @@ class Solution:
         def dfs(lists):
             if len(result) == target_length:
                 return
+
             print(f'LISTS: {lists}')
             result.append(lists)
             head = lists[:1]
