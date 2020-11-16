@@ -22,10 +22,13 @@
   + 프로그래머스 월간코드챌린지 11월 
 * [11/18 7주차](https://github.com/DevooKim/algorithm-study/tree/main/week7)
   + 책13장(최단 경로 문제)
+  + 책14장 (트리)
 * [11/25 8주차](https://github.com/DevooKim/algorithm-study/tree/main/week8)
-  + 책14장(트리)
-* [12/2 9주차](https://github.com/DevooKim/algorithm-study/tree/main/week9)
   + 책15장(힙)
+  + 책16장(트라이)
+  + 책17장(정렬)
+* [12/2 9주차](https://github.com/DevooKim/algorithm-study/tree/main/week9)
+  + 책18장(이진검색)
 * [12/9 10주차](https://github.com/DevooKim/algorithm-study/tree/main/week10)
   + 책16장
   
