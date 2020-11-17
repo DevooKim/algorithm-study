@@ -29,4 +29,37 @@ class Solution:
                     queue.append(cur_root.left)
         return root
 
+    def book(self, root: TreeNode) -> TreeNode:
+        queue = collections.deque([root])
+
+        while queue:
+            node = queue.popleft()
+            
+            if node:
+                node.left, node.right = node.right, node.left
+
+                queue.append(node.left)
+                queue.append(node.right)
+
+        return root
+
+    def book2(self, root: TreeNode) -> TreeNode:
+        stack = collections.deque([root])
+
+        while stack:
+            node = stack.pop()
+            if node:
+                node.left, node.right = node.right, node.left
+
+                stack.append(node.left)
+                stack.append(node.right)
+
+        return root
+
+    def book3(self, root: TreeNode) -> TreeNode:
+        if root:
+            root.left, root.right = self.book3(root.right), self.book3(root.left)
+        return root
+    
+
 a = Solution()
