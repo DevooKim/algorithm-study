@@ -8,6 +8,7 @@ import math
 import bisect
 from typing import *
 
+#못풀음
 # Definition for a binary tree node.
 class TreeNode:
     def __init__(self, val=0, left=None, right=None):

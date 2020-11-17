@@ -8,6 +8,7 @@ import math
 import bisect
 from typing import *
 
+#못풀음
 # Definition for a binary tree node.
 class TreeNode:
     def __init__(self, val=0, left=None, right=None):
@@ -36,5 +37,21 @@ class Solution:
                     rDepth += 1
 
         return lDepth + rDepth - 1
+
+    logest: int = 0
+
+    def treeDFS(self, root: TreeNode) -> int:
+        def dfs(node: TreeNode) -> int:
+            if not node:
+                return -1
+            left = dfs(node.left)
+            right = dfs(node.right)
+
+            self.logest = max(self.logest, left + right + 2)
+
+            return max(left, right) + 1
+
+        dfs(root)
+        return self.longest
 
 a = Solution()
