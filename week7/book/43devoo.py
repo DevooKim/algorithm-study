@@ -47,7 +47,7 @@ class Solution:
             left = dfs(node.left)
             right = dfs(node.right)
 
-            self.logest = max(self.logest, left + right + 2)
+            self.logest = max(self.longest, left + right + 2)
 
             return max(left, right) + 1
 
