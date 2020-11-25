@@ -14,6 +14,7 @@ class Solution:
         def dfs(lists):
             if len(result) == target_length:
                 return
+
             print(f'LISTS: {lists}')
             result.append(lists)
             head = lists[:1]
@@ -63,8 +64,26 @@ class Solution:
     def book2(self, nums: List[int]) -> List[List[int]]:
         return list(itertools.permutations(nums))
 
+    def retry(self, nums: List[int]) -> List[List[int]]:
+
+        clone_list, clone = [], nums[1::]
+        clone_list.append(clone)
+        for i in range(len(clone) - 1):
+            clone_list.append(clone[1:] + clone[:1])
+
+        result = []
+        for e in clone_list:
+            for i in range(len(nums)):
+                element = e[::]
+                element.insert(i, nums[0])
+                result.append(element)
+
+        return result
+
+
+
 # print(Solution().permute([1, 2, 3]))
-print(Solution().book([1, 2, 3]))
+print(Solution().retry([1, 2, 3]))
 
 # [[5, 4, 6, 2], [5, 6, 2, 4], [5, 2, 4, 6], [4, 6, 2, 5], [4, 2, 5, 6], [4, 5, 6, 2], [6, 2, 5, 4], [6, 5, 4, 2],
 #  [6, 4, 2, 5], [2, 5, 4, 6], [2, 4, 6, 5], [2, 6, 5, 4], [5, 4, 6, 2], [5, 6, 2, 4], [5, 2, 4, 6], [4, 6, 2, 5],
