@@ -29,6 +29,35 @@ class Solution:
 
         return dfs(root)
 
+    def bfs(self, root: TreeNode) -> TreeNode:
+        queue = collections.defaultdict([root])
+
+        while queue:
+            node = queue.popleft()
+
+            if node:
+                node.left, node.right = node.right, node.left
+
+                queue.append(node.left)
+                queue.append(node.right)
+
+        return root
+
+    def dfs(self, root: TreeNode) -> TreeNode:
+        stack = collections.deque([root])
+
+        while stack:
+            node = stack.pop()
+
+            if node:
+                node.left, node.right = node.right, node.left
+
+                stack.append(node.left)
+                stack.append(node.right)
+
+        return root
+        
+
 
         
 
