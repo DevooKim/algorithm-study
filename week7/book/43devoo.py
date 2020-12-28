@@ -18,6 +18,7 @@ class TreeNode:
 class Solution:
     longest = 0
     def diameterOfBinaryTree(self, root: TreeNode) -> int:
+      
         def dfs(node):
             if not node:
                 return -1
