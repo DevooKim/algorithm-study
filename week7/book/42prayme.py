@@ -36,5 +36,37 @@ class Solution:
         search(root, 1)
         return max(a)
 
+    def book(self, root: TreeNode) -> int:
+        # 깊이는 어떻게 측정할 수 있을까?
+        # DFS는 스택, BFS는 큐를 사용하여 구현
+        # 이번 문제는 BFS로 구현
+        
+        if not root:
+            return 0
+        
+        # 트리 자체를 리스트로 넣음
+        queue = collections.deque([root])
+        print(queue)
+        depth = 0
+
+        while queue:
+            depth += 1
+            # 큐 연산 추출 노드의 자식 노드 삽입
+            for _ in range(len(queue)):
+                # 트리 자체를 pop 시킨 후 자식이 있는지 확인함
+                cur_root = queue.popleft()
+                if cur_root.left:
+                    queue.append(cur_root.left)
+                if cur_root.right:
+                    queue.append(cur_root.right)
+            
+        return depth
+        
+
+
+
+        
+
 
 print(Solution().maxDepth(TreeNode(val=3, left=TreeNode(9, None, None), right=TreeNode(20, TreeNode(15, None, None), TreeNode(7, None, None)))))
+print(Solution().book(TreeNode(val=3, left=TreeNode(9, None, None), right=TreeNode(20, TreeNode(15, None, None), TreeNode(7, None, None)))))
