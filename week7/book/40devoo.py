@@ -43,6 +43,7 @@ class Solution:
     dist = collections.defaultdict(int)
 
     while Q:
+      print(Q, dist)
       time, node = heapq.heappop(Q)
       if node not in dist:
         dist[node] = time
@@ -52,11 +53,12 @@ class Solution:
           heapq.heappush(Q, (alt, v))
 
     if len(dist) == N:
+      print(dist)
       return max(dist.values())
     return -1
       
     
 
 a = Solution()
-# print(a.networkDelayTime([[2,1,1],[2,3,1],[3,4,1]], 4, 2))
-print(a.networkDelayTime([[1,2,1],[2,1,3]], 2, 2))
+print(a.dijkstra([[2,1,1],[2,3,1],[3,4,1]], 4, 2))
+# print(a.networkDelayTime([[1,2,1],[2,1,3]], 2, 2))
