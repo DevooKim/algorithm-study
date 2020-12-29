@@ -21,15 +21,29 @@ class Solution:
 
         def traverse(node, low, high):
             if node:
-                
                 if low <= node.val <= high:
                     self.value += node.val
-
                 traverse(node.left)
                 traverse(node.right)
 
-        traverse(root, low, high)
+        traverse(root)
         return self.value
+
+    def book(self, root, low, high):
+        def dfs(node):
+            if not node:
+                return 0
+
+            if node.val < low:
+                return dfs(node.right)
+            elif node.val > high:
+                return dfs(node.left)
+
+            return node.val + dfs(node.left) + dfs(node.right)
+
+        return dfs(root)
+
+
 
         
 a = Solution()
