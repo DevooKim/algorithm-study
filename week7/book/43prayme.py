@@ -83,6 +83,28 @@ class Solution:
             search_right(root.right, 1)
 
         return left[0] + right[0]
+   
+    longest: int = 0
+    def book_dfs(self, root: TreeNode) -> int:
+        # 가장 깊은 노드(리프 노드)까지 탐색한다.
+        # 부모로 거슬러 올라가면서 거리를 계산한다.
+        # 상태값을 업데이트하면서 누적해나간다.
+
+        def dfs(node: TreeNode) -> int:
+            if not node:
+                return -1
+            
+            left = dfs(node.left)
+            right = dfs(node.right)
+
+            # 가장 긴 경로
+            self.longest = max(self.longest, left + right + 2)
+            # 상태값
+            return max(left, right) + 1
+
+        dfs(root)
+        return self.longest
+
 
 
 
