@@ -52,37 +52,38 @@ class Solution:
         # 기준으로 하되 left와 right를 구분지어야한다.
         if root == None:
             return 0
-        # def check_root(self, root: TreeNode) -> int:
-        #     if root == None or (root.left == None and root.right == None):
-        #         return 0
         
+        left, right = [0], [0]
+        def search_left(root: TreeNode, depth):
 
-        def search(child: TreeNode, depth: int) -> int:
-            if child == None:
-                return depth - 1
+            if root.left != None:
+                search_left(root.left, depth+1)
+            
+            if root.right != None:
+                search_left(root.right, depth+1)
 
-            print(f'VALUE: {child.val}, DEPTH: {depth}')
+            print(f"LEFT:: VAL: {root.val}, DEPTH: {depth}")
+            left[0] = max(left[0], depth)
 
-            if child.left != None and child.right != None:
-                return depth
+        def search_right(root: TreeNode, depth):
 
-            print(f'depth: {depth}, node: {child.val}')
-            return max(search(child.left, depth+1), search(child.right, depth+1))
+            if root.left != None:
+                search_right(root.left, depth+1)
+            
+            if root.right != None:
+                search_right(root.right, depth+1)
 
-        right, left = 0, 0
-        try:
-            left = search(root.left, 1)
-        except NameError:
-            print("ROOT.LEFT IS NULL")
+            print(f"RIGHT:: VAL: {root.val}, DEPTH: {depth}")
+            right[0] = max(right[0], depth)
         
-        try:
-            right = search(root.right, 1)
-        except NameError:
-            print("ROOT.RIGHT IS NULL")
+        if root.left != None:
+            search_left(root.left, 1)
+        
+        if root.right != None:
+            search_right(root.right, 1)
 
+        return left[0] + right[0]
 
-        print(f'LEFT: {left}, RIGHT:{right}')
-        return right + left
 
 
 print(Solution().fix(TreeNode(1, TreeNode(2, TreeNode(4, None, None), TreeNode(5, None, None)), TreeNode(3, None, None))))
