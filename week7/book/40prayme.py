@@ -62,6 +62,8 @@ class Solution:
         # A. 다익스트라로 최단시간을 추출해보자
         # B. 모든 노드에 도달할 수 있는지 여부를 노드에 다익스트라 알고리즘 계산 값이 존재하는지로 체크
         graph = collections.defaultdict(list)
+        # u, v, w
+        # u : { [v1, w1]. [ v2, w2] }
         for u, v, w in times:
             graph[u].appen((v,w))
 
