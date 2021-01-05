@@ -37,3 +37,6 @@ class Solution:
 a = Solution()
 print(a.kClosest([[1,3], [-2,2]], 1))
 print(a.kClosest([[3,3],[5,-1],[-2,4]],2))
+
+#내풀이 : 2n + log(n)
+#책풀이 : 2n * log(n)
