@@ -43,10 +43,24 @@ class Solution:
 
             return merged
 
+        def arrToList(node, arr):
+            if arr:
+                node = ListNode(arr[0])
+                node.next = arrToList(node.next, arr[1:])
+            return node
+        
+        if not head:
+            return head
         arr = []
         while head:
             arr.append(head.val)
             head = head.next
-        return mergeSort(arr)
+        arr = mergeSort(arr)
+
+        return arrToList(ListNode(), arr)
+
+
+            
+
 
 a = Solution()
