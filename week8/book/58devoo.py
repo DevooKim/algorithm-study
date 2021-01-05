@@ -59,8 +59,41 @@ class Solution:
 
         return arrToList(ListNode(), arr)
 
+    
+    def mergedLists_book(self, l1, l2):
+        if l1 and l2:
+            if l1.val > l2.val:
+                l1, l2 = l2, l1
+            l1.next = self.mergedLists_book(l1.next, l2)
+        return l1 or l2
 
-            
+    def mergeSort_book(self, head):
+        if not (head and head.next):
+            return head
+        
+        half, slow, fast = None, head, head
+        while fast and fast.next:
+            half, slow, fast = slow, slow.next, fast.next.next
 
+        half.next = None    #slow가 mid값이고 half가 slow이전이다. half 이후로 연결을 끊어버림
+
+        l1 = self.sortList_book(head)
+        l2 = self.sortList_book(slow)
+
+        return self.mergedLists_book(l1, l2)
+
+    def book2(self, head):
+        p = head
+        lst = []
+        while p:
+            lst.append(p.val)
+            p = p.next
+
+        lst.sort()
+        p = head
+        for i in range(len(lst)):
+            p.val = lst[i]
+            p = p.next
+        return head
 
 a = Solution()
