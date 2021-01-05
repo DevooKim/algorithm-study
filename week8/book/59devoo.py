@@ -20,20 +20,18 @@ class Solution:
 
     def merged(self, left, right):
         result = []
-        # left = collections.deque(left)
-        # right = collections.deque(right)
         print(left, right)
         while left and right:
             if left[0] < right[0]:
                 result.append(left.pop(0))
             else:
-                # left.appendleft(right.popleft())
                 right.pop(0)
         
         if left:
             result+=left
         if right:
             result+=right
+
         return result
 
         
@@ -41,6 +39,16 @@ class Solution:
         lists = list(functools.reduce(lambda x, y: x + y, intervals))
         print(self.divide(lists))
 
+    def book(self, intervals: List[List[int]]):
+        merged = []
+        for i in sorted(intervals, key=lambda x: x[0]):
+            if merged and i[0] <= merged[-1][1]:
+                merged[-1][1] = max(merged[-1][1], i[1])
+            else:
+                merged += [i]
+
+        return merged
+
         
 a = Solution()
-print(a.merge([[1,3],[2,6],[8,10],[15,18]]))
+print(a.book([[1,3],[2,6],[8,10],[15,18]]))
