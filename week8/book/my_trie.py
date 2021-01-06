@@ -1,3 +1,8 @@
+class TrieNode:
+    def __init__(self):
+        self.word = False
+        self.children = {} 
+
 class Trie:
     def __init__(self):
         self.root = TrieNode()
@@ -30,11 +35,7 @@ class Trie:
             node = node.children[char]
 
         return True
-        
-class TrieNode:
-    def __init__(self):
-        self.word = False
-        self.children = {} 
+
 
 
 # Your Trie object will be instantiated and called as such:
