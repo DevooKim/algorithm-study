@@ -17,7 +17,7 @@ class Solution:
 
         print(heap)
         
-        for _ in range(k):
+        for _ in range(k-1):
             heapq.heappop(heap)
             print(heap)
     
