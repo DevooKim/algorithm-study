@@ -29,6 +29,7 @@
   + 책17장(정렬)
 * [12/2 9주차](https://github.com/DevooKim/algorithm-study/tree/main/week9)
   + 책18장(이진검색)
+  + 책19장(비트조작)
 * [12/9 10주차](https://github.com/DevooKim/algorithm-study/tree/main/week10)
   + 책16장
   
