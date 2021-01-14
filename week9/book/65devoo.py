@@ -8,7 +8,7 @@ import math
 import bisect
 from typing import *
 
-#풀었음
+#풀었음 내풀이: 240ms/15.5MB, 책풀이: 240ms/23MB
 class Solution:
     def search(self, nums: List[int], target: int) -> int:
         def bs(arr, offset):
@@ -44,6 +44,7 @@ class Solution:
 
             else:
                 return -1
+        return binary_search(0, len(nums) - 1)
 
 a = Solution()
 print(a.search([-1,0,3,5,9,12], 9))
