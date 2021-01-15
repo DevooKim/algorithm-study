@@ -31,8 +31,9 @@ class Solution:
             if child.right != None:
                 search(child.right, depth+1)
 
-        
+            print(f'DEPTH: {depth}, VALUE: {child.val}')
             a.append(depth)
+
         search(root, 1)
         return max(a)
 

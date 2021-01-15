@@ -89,7 +89,6 @@ class Solution:
         # 가장 깊은 노드(리프 노드)까지 탐색한다.
         # 부모로 거슬러 올라가면서 거리를 계산한다.
         # 상태값을 업데이트하면서 누적해나간다.
-
         def dfs(node: TreeNode) -> int:
             if not node:
                 return -1
@@ -105,7 +104,4 @@ class Solution:
         dfs(root)
         return self.longest
 
-
-
-
-print(Solution().fix(TreeNode(1, TreeNode(2, TreeNode(4, None, None), TreeNode(5, None, None)), TreeNode(3, None, None))))
+print(Solution().diameterOfBinaryTree(TreeNode(1, TreeNode(2, TreeNode(4, None, None), TreeNode(5, None, None)), TreeNode(3, None, None))))
