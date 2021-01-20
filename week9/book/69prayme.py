@@ -51,7 +51,7 @@ class Solution:
         return False
 
     def book_pythonic(self, matrix: List[List[int]], target: int) -> bool:
-        return any(target in row for row in math)
+        return any(target in row for row in matrix)
 
 case1 = [
     [1, 4, 7, 11, 15],

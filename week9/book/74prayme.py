@@ -10,6 +10,7 @@ from typing import List
 
 class Solution:
     def hammingWeight(self, n: int) -> int:
+        MASK = sys.maxsize
         print(n & sys.maxsize)
     
     def book(self, n: int) -> int:

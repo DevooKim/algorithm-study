@@ -14,7 +14,7 @@ class Solution:
         # 정렬이 되어 있는 상태다.
         def binary_search(arr: List[int]):
             middle = len(arr)//2
-            self.answer += middle
+            self.answer = middle
             if middle == 0:
                 # print(arr)
                 if arr[0] == target:
