@@ -10,7 +10,7 @@ from typing import *
 
 class Solution:
     def reconstructQueue(self, people: List[List[int]]) -> List[List[int]]:
-        #1. [a,b]에서 a가 작고 b가 큰 기준으로 정렬
+        #1. [a,b]에서 a, b순서로 정렬
         #2. 하나씩 추출해서 조건이 맞으면 결과에 저장
         #3. people이 남았는데 조건에 맞는 것이 없다면 결과에서 하나를 빼고 다시 반복
 
@@ -32,6 +32,12 @@ class Solution:
         heap = []
         for person in people:
             heapq.heappush(heap, (-person[0], person[1]))
+        
+        result = []
+        while heap:
+            person = heapq.heappop(heap)
+            result.insert(person[1], [-person[0], person[1]])
+        return result
     
 
 a = Solution()
