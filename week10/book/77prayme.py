@@ -22,7 +22,6 @@ class Solution:
                 left += 1
         return right - left
 
-    def
 
 print(Solution().characterReplacement("ABAB", 2)) # 4
 print(Solution().characterReplacement("AABABBA", 1)) # 4
