@@ -31,7 +31,20 @@ class Solution:
                 return idx
         return -1
 
+    def book(self, gas, cost):
+        if sum(gas) < sum(cost):
+            return -1
+
+        start, fuel = 0, 0
+        for i in range(len(gas)):
+            if gas[i] + fuel < cost[i]:
+                start = i + 1
+                fuel = 0
+            else:
+                fuel += gas[i] - cost[i]
+
+        return start
+
 a = Solution()
-# print(a.canCompleteCircuit( [1,2,3,4,5], [3,4,5,1,2]))
+print(a.canCompleteCircuit( [1,2,3,4,5], [3,4,5,1,2]))
 # print(a.canCompleteCircuit( [2,3,4], [3,4,3]))
-print(a.canCompleteCircuit())
