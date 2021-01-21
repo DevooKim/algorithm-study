@@ -13,8 +13,8 @@ class Solution:
         #1. [a,b]에서 a가 작고 b가 큰 기준으로 정렬
         #2. 하나씩 추출해서 조건이 맞으면 결과에 저장
         #3. people이 남았는데 조건에 맞는 것이 없다면 결과에서 하나를 빼고 다시 반복
-        
-        people = collections.deque(sorted(people, key=lambda x: (x[0], -x[0])))
+
+        people = collections.deque(sorted(people, key=lambda x: (x[0], x[1])))
         print(people)
         result = []
         # while people:
@@ -27,6 +27,12 @@ class Solution:
         #         result.append(p)
         #     else:
         #         people.append(p)
+    
+    def book1(self, people):
+        heap = []
+        for person in people:
+            heapq.heappush(heap, (-person[0], person[1]))
+    
 
 a = Solution()
 print(a.reconstructQueue([[7,0],[4,4],[7,1],[5,0],[6,1],[5,2]]))
