@@ -10,7 +10,12 @@ from typing import List
 
 class Solution:
     def singleNumber(self, nums: List[int]) -> int:
-        result = 0
+        result = 0 
+        # 0 0000 ^ 2 0010
+        # 2 0010 ^ 1 0001
+        # 3 0011 ^ 2 0010
+        # 1 0001
+        
         for num in nums:
             result ^= num
         

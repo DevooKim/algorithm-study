@@ -15,7 +15,7 @@ class Solution:
         INT_MAX = 0x7FFFFFFF
 
         while b != 0:
-            a, b = (a ^ b) & MASK, ((A & b) & MASK)
+            a, b = (a ^ b) & MASK, ((a & b) & MASK)
         
         if a > INT_MAX:
             a = ~(a ^ MASK)
