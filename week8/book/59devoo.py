@@ -46,7 +46,7 @@ class Solution:
                 merged[-1][1] = max(merged[-1][1], i[1])
             else:
                 merged += [i]
-
+                # merged += i,
         return merged
 
         

@@ -23,6 +23,10 @@ class Solution:
             result.append(points[arr[i][1]])
         return result
 
+
+
+
+
     def book(self, points: List[List[int]], K: int) -> List[List[int]]:
         heap = []
         for (x, y) in points:
