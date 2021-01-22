@@ -33,7 +33,7 @@
 * [01/22 10주차](https://github.com/DevooKim/algorithm-study/tree/main/week10)
   + 책20장(슬라이딩윈도우)
   + 책21장(그리디알고리즘)
-* [01/29 11주]()
+* [01/29 11주](https://github.com/DevooKim/algorithm-study/tree/main/week11/book)
   + 책22장(분할정복)
   + 책23장(다이나믹프로그래밍)
 ## 참고 사이트
