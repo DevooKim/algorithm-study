@@ -35,10 +35,20 @@ class Solution:
             if rMin[1] > right:
                 rMin = [i, right]
 
-        print(part)
-        print(lMin, rMin)
         # return nums[lMin[0] + 1 : rMin[0] + 1]
         return sum(nums[lMin[0] + 1 : rMin[0] + 1])
 
+    def book(self, nums):
+        for i in range(1, len(nums)):
+            nums[i] += nums[i - 1] if nums[i - 1] > 0 else 0
+        return max(nums)
+
+    def book2(self, nums):
+        best_sum = -sys.maxsize
+        current_sum = 0
+        for num in nums:
+            current_sum = max(num, current_sum + num)
+            best_sum = max(best_sum, current_sum)
+        return best_sum
 a = Solution()
 print(a.maxSubArray([-2,1,-3,4,-1,2,1,-5,4]))
