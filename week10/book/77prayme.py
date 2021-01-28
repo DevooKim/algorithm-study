@@ -11,9 +11,9 @@ from typing import List
 class Solution:
     def characterReplacement(self, s: str, k: int) -> int:
         left = right = 0
-        counts = collections.Counter()
-        for right in range(1, len(s) + 1):
-            counts[s[right - 1]] += 1
+        counts = collections.Counter() # 빈 카운터
+        for right in range(1, len(s) + 1): # 1번부터 길이 + 1
+            counts[s[right - 1]] += 1 # 0~ 길이지
 
             max_char_n = counts.most_common(1)[0][1]
 
