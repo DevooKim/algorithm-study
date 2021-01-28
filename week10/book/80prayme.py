@@ -23,21 +23,28 @@ class Solution:
         cnt = 0
         answer = 0
         j = 0
-        while all(i != 0 for i in remain):
+        # A, B
+        # 3, 3
+        # A: 0
+        # B: 1
+        # cnt = 0 A
+        # cnt = 1 B
+        # cnt - p["A"] 0
+        # cnt = 2 A
+        idle = 0
+        while remain[0] != 0 or remain[1] != 0:
             for i, k in enumerate(ts):
-                print(j, remain)
-                j += 1
-                if cnt - p[k] >= n:
-                    # print(cnt - p[k])
-                    pass
+                if cnt - p[k] <= n:
+                    idle += 1
+                    continue
                 else:
                     remain[i] -= 1
                     p[k] = cnt
                     answer += 1
+                cnt += 1
+        
 
-            cnt += 1
-
-        return answer
+        return answer + idle
 
     def book(self, tasks: List[str], n: int) -> int:
         counter = collections.Counter(tasks)

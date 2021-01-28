@@ -31,7 +31,7 @@ class Solution:
                 result += prices[i + 1] - prices[i]
         return result
 
-    def maxProfit(selfself, prices: List[int]) -> int:
+    def maxProfit(self, prices: List[int]) -> int:
         return sum(max(prices[i+1] - prices[i], 0) for i in range(len(prices) - 1))
 
 
