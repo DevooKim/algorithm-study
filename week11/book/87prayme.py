@@ -41,20 +41,27 @@ class Solution:
            a[1] += 2
 
         while a[2] > 0:
-            answer += math.factorial((a[2] + a[1])) // (math.factorial(a[2]) * math.factorial(a[1]))
-            # print(math.factorial((a[2] + a[1])) // (a[2] * a[1]))
+            top = a[2] + a[1]
+            bottom_max = max(a[2], a[1])
+            bottom_min = min(a[2], a[1])
+            
+
+            b = 1
+            for i in range(bottom_max+1, top+1):
+                b *= i
+            answer += b // math.factorial(bottom_min)
+            
             a[2] -= 1
             a[1] += 2
         return answer + 1
 
 
-print(Solution().my_counter(3))
-print(Solution().my_counter(4))
-print(Solution().my_counter(6)) # 8
+print(Solution().my_counter(3)) # 3
+print(Solution().my_counter(4)) # 5
+# print(Solution().my_counter(13)) # 13
 
 # print(Solution().climbStairs(2)) # 2
 # print(Solution().climbStairs(3)) # 3
 # print(Solution().climbStairs(4)) # 5
 # print(Solution().climbStairs(5)) # 8
-# print(Solution().climbStairs(6)) # 8
-# print(Solution().climbStairs(35)) # 5
+# print(Solution().climbStairs(6)) # 13
