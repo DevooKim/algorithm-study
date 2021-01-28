@@ -28,9 +28,33 @@ class Solution:
 
             return answer
 
-print(Solution().climbStairs(2)) # 2
-print(Solution().climbStairs(3)) # 3
-print(Solution().climbStairs(4)) # 5
-print(Solution().climbStairs(5)) # 8
-print(Solution().climbStairs(6)) # 8
-print(Solution().climbStairs(35)) # 5
+    def my_counter(self, n: int) -> int:
+        
+        a = {
+            2: n//2,
+            1: n%2
+        }
+        answer = 0
+        if a[1] == 0:
+           answer += 1
+           a[2] -= 1
+           a[1] += 2
+
+        while a[2] > 0:
+            answer += math.factorial((a[2] + a[1])) // (math.factorial(a[2]) * math.factorial(a[1]))
+            # print(math.factorial((a[2] + a[1])) // (a[2] * a[1]))
+            a[2] -= 1
+            a[1] += 2
+        return answer + 1
+
+
+print(Solution().my_counter(3))
+print(Solution().my_counter(4))
+print(Solution().my_counter(6)) # 8
+
+# print(Solution().climbStairs(2)) # 2
+# print(Solution().climbStairs(3)) # 3
+# print(Solution().climbStairs(4)) # 5
+# print(Solution().climbStairs(5)) # 8
+# print(Solution().climbStairs(6)) # 8
+# print(Solution().climbStairs(35)) # 5
