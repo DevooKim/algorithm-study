@@ -34,6 +34,7 @@ class Solution:
             2: n//2,
             1: n%2
         }
+
         answer = 0
         if a[1] == 0:
            answer += 1
@@ -50,10 +51,32 @@ class Solution:
             for i in range(bottom_max+1, top+1):
                 b *= i
             answer += b // math.factorial(bottom_min)
-            
+
             a[2] -= 1
             a[1] += 2
         return answer + 1
+
+    def book_recur(self, n: int) -> int:
+        if n == 1:
+            return 1
+        if n == 2:
+            return 2
+        return self.climbStairs(n - 1) + self.climbStairs(n - 2)
+
+    dp = collections.defaultdict()
+    def book_memoization(self, n: int) -> int:
+        if n <= 2:
+            return n
+        
+        if self.dp[n]:
+            return self.dp[n]
+        self.dp[n] = self.climbStairs(n-1) + self.climbStairs(n-2)
+        return self.dp[n]
+        
+        
+
+
+
 
 
 print(Solution().my_counter(3)) # 3
